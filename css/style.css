@@ -696,6 +696,13 @@
      margin-top: 40px;
      background: #ffffff;
 }
+
+@media (max-width: 768px) {
+    .main-header.fixed-menu .logo {
+        max-width: 60%; /* Riduce il logo al 80% della larghezza del genitore */
+        height: auto; /* Assicurati che l'altezza sia proporzionata */
+    }
+}
  .main-header.fixed-menu {
      position: fixed;
      visibility: hidden;
