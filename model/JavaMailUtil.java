@@ -22,7 +22,7 @@ public class JavaMailUtil {
 		    props.put("mail.smtp.auth", "true");
 		    props.put("mail.smtp.starttls.enable", "true");
 		    
-		    String userName = "ilparadisodeglianimali.gds@gmail.com";
+		    String userName = "fattoriahope@gmail.com";
 		    String password ="ccds qxau ygqq bdgi";
 		    
 		       Authenticator auth = new Authenticator() {
