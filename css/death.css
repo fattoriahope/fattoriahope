@@ -1,0 +1,33 @@
+.box-img-hover-bye {
+    position: relative;
+    display: inline-block;
+}
+
+/* Scala di grigi */
+.box-img-hover-bye img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+/* X rossa */
+.box-img-hover-bye::before,
+.box-img-hover-bye::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;    /* lunghezza della linea */
+    height: 4px;   /* spessore della linea */
+    background-color: red;
+    transform-origin: center;
+}
+
+.box-img-hover-bye::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.box-img-hover-bye::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
