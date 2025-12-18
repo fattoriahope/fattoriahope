@@ -2617,7 +2617,82 @@
 	border: none;
 }
 
+/* Stile per la card dell'animale */
+.pet-card {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    overflow: hidden;
+    
+    /* --- NUOVE RIGHE FONDAMENTALI --- */
+    position: relative; /* Necessario per far funzionare z-index */
+    z-index: 1;         /* Livello base */
+    /* ------------------------------- */
+}
 
+/* Effetto quando passi sopra col mouse */
+.pet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    
+    /* --- LA SOLUZIONE AL PROBLEMA --- */
+    z-index: 9999; /* Forza la card a stare sopra a qualsiasi cosa (incluso il carosello sotto) */
+    /* ------------------------------- */
+}
+
+/* 1. Stile base (Desktop e Tablet) */
+.pet-image-wrapper {
+    overflow: hidden;
+    /* Aumentiamo l'altezza base per il desktop per renderla più slanciata */
+    height: 380px; 
+    position: relative;
+}
+
+/* 2. Regola specifica per Mobile (schermi sotto i 768px) */
+@media (max-width: 767px) {
+    .pet-image-wrapper {
+        /* Su mobile la card è larga, quindi serve più altezza 
+           per evitare l'effetto "quadrato" o schiacciato */
+        height: 500px; 
+    }
+}
+
+/* 3. Assicurati che l'immagine copra sempre tutto lo spazio senza deformarsi */
+.pet-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fondamentale: ritaglia l'immagine per riempire il box */
+    object-position: center top; /* Focalizza la parte alta della foto (spesso il viso dell'animale) */
+    transition: transform 0.5s ease;
+}
+
+
+/* Leggero zoom dell'immagine all'hover della card */
+.pet-card:hover .pet-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Tipografia per il nome dell'animale */
+.pet-name {
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif; /* Un font un po' più giocoso (opzionale) */
+    color: #4a4a4a;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Stile per il nome dell'adottante */
+.adopter-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #007bff; /* O un colore che si adatti al tuo tema */
+}
+
+/* Stile per l'etichetta "Adottato da:" */
+.adopter-info .small {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 
 
